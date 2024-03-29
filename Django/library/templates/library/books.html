@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <h2>Books: </h2>
+
+    <form>
+        <input name = 'search' value='{{ search }}' placeholder='search books...'>
+        <button type = 'submit'> Search</button>
+    </form>
+
+    <ul>
+        {% for book in books%}
+            <li>
+                <a href="{% url 'book_detail' book.pk %}">
+                    {{ book.title }} by {{ book.author }}
+                </a>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
